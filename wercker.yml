@@ -42,5 +42,9 @@ build:
           code: RAILS_ENV=test bundle exec rails db:schema:load
 
       - script:
+          name: rubocop
+          code: bundle exec rubocop
+
+      - script:
           name: rspec
           code: bundle exec rspec
