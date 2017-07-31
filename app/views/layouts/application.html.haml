@@ -1,0 +1,10 @@
+!!! 5
+%html
+  %head
+    %title= "Onigily"
+  %body
+    .container
+      - flash.each do |message_type, message|
+        = content_tag(:div, message, class: "alert alert-#{message_type}")
+      = yield
+      = debug(params) if Rails.env.development?
