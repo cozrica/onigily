@@ -38,5 +38,11 @@ RSpec.describe User, type: :model do
 
       it { expect(user).not_to be_valid }
     end
+
+    context "password should be present" do
+      let(:params) { { password: " " } }
+
+      it { expect(user).not_to be_valid }
+    end
   end
 end
